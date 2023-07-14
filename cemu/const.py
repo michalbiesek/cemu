@@ -13,7 +13,7 @@ LICENSE = "MIT"
 DESCRIPTION = (
     """Cemu is a simple assembly/dissembly/emulation IDE that provides an easy """
     """Plug-n-Play environment to start playing with many architectures (currently """
-    """supports x86-{32,64}, ARM, AARCH64, MIPS, MIPS64, SPARC and PPC)."""
+    """supports x86-{32,64}, ARM, AARCH64, MIPS, MIPS64, SPARC, PPC and RISCV-64)."""
 )
 HOME = pathlib.Path("").home()
 PKG_PATH = pathlib.Path(__file__).absolute().parent

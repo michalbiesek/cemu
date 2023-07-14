@@ -163,6 +163,7 @@ class ArchitectureManager(dict[str, list[Architecture]]):
             arm = importlib.import_module(".arm", package="cemu.arch")
             mips = importlib.import_module(".mips", package="cemu.arch")
             sparc = importlib.import_module(".sparc", package="cemu.arch")
+            riscv = importlib.import_module(".riscv", package="cemu.arch")
 
             self["generic"] = [
                 generic.Generic(),
@@ -183,6 +184,7 @@ class ArchitectureManager(dict[str, list[Architecture]]):
                 mips.MIPS64(endian=Endianness.BIG_ENDIAN),
             ]
             self["sparc"] = [sparc.SPARC(), sparc.SPARC64()]
+            self["riscv"] = [riscv.RISCV64()]
         return
 
     def keys(self, full: bool = False) -> list[str]:
@@ -211,6 +213,7 @@ from .arm import ARM, AARCH64  # noqa: E402
 from .mips import MIPS, MIPS64  # noqa: E402
 from .sparc import SPARC, SPARC64  # noqa: E402
 from .ppc import PowerPC  # noqa: E402
+from .riscv import RISCV64  # noqa: E402
 
 
 def is_x86_16(a: Architecture):
@@ -259,6 +262,10 @@ def is_sparc(a: Architecture):
 
 def is_sparc64(a: Architecture):
     return isinstance(a, SPARC64)
+
+
+def is_riscv64(a: Architecture):
+    return isinstance(a, RISCV64)
 
 
 def is_ppc(a: Architecture):

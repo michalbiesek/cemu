@@ -52,6 +52,9 @@ class ArmTestCase(GenericTestCase):
 class Arm64TestCase(GenericTestCase):
     arch: ClassVar[cemu.arch.Architecture] = cemu.arch.arm.AARCH64()
 
+@dataclass
+class Riscv64TestCase(GenericTestCase):
+    arch: ClassVar[cemu.arch.Architecture] = cemu.arch.arm.RISCV64()
 
 @dataclass
 class MipsTestCase(GenericTestCase):
@@ -201,6 +204,7 @@ class TestEmulatorBasic(unittest.TestCase):
                 or isinstance(tc.arch, cemu.arch.x86.X86_64)
                 or isinstance(tc.arch, cemu.arch.arm.ARM)
                 or isinstance(tc.arch, cemu.arch.arm.AARCH64)
+                or isinstance(tc.arch, cemu.arch.arm.RISCV64)
             ):
                 assert self.emu.pc() == self.emu.sections[0].address + len(
                     self.emu.code

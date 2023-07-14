@@ -31,6 +31,7 @@ It allows to test binary samples, check your shellcodes or even simply learn how
   - ARM / AArch64
   - MIPS / MIPS64
   - SPARC / SPARC64
+  - RISCV-64
   - PPC (but not emulation)
 
 `CEmu` was mostly tested to work on Linux and Windows, but should work on MacOS.

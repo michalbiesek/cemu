@@ -11,7 +11,7 @@ build-backend = "setuptools.build_meta"
 name = "CEmu"
 version = "0.8"
 authors = [{ name = "hugsy", email = "hugsy@blah.cat" }]
-description = "Cemu is a simple assembly/dissembly/emulation IDE that provides an easy Plug-n-Play environment to start playing with many architectures (currently supports x86-{32,64}, ARM, AARCH64, MIPS, MIPS64, SPARC and PPC)."
+description = "Cemu is a simple assembly/dissembly/emulation IDE that provides an easy Plug-n-Play environment to start playing with many architectures (currently supports x86-{32,64}, ARM, AARCH64, MIPS, MIPS64, SPARC, PPC and RISCV-64)."
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
@@ -32,6 +32,7 @@ keywords = [
     "x64",
     "arm",
     "aarch64",
+    "riscv-64",
     "mips",
     "powerpc",
     "sparc",
